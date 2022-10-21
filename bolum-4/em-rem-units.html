@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #kutu-1 {
+            font-size: 20px;  /*Varsayılan olarak 1.5em olan değer manuel olarak girdiğimiz 20 px ile çarpılıp h2 değerini 20x1.5=30px değerine çıkartacaktır. p etiketi de 1emx20px=20px değerine karşılık gelecektir. */
+        /*}*/
+        /*p değerinin boyutunu 20px değilde örneğin 1.5 em gibi ayarlamak istersek*/
+        /*
+        #kutu-1 p {
+            font-size: 1.5em; /*Kapsayıcı olan elemanın (div yani kutu-1 değeri yani 20px) 1.5 katını alır ve 30 px lik bir içerik ortaya çıkar.*/
+           /* padding: 1em; /*Kapsayıcı elemana değilde o anda içinde bulunduğu kapsayıcı elemanın dontsize ına bakıyor. Yani 1.5em -> 30px olduğu için padding de 30px X 1em = 30px değerine ulaşır. Ancak bu istediğimiz bir durum değil. Kapsayıcı elemana göre hareket etmesini tercih ediyoruz. Bundan dolayı burada em yerine rem kullanmak mantıklı bir yaklaşım olacaktır./
+        }
+        */
+        html {
+            font-size: 10px; /* html e font büyüklüğü verdiğimizde sayfadaki her şey değişir. p değeri -> 10x2 = 20px     h2 değeri -> 10x3 =30px olur.*/
+        }
+ 
+        /* #kutu-1 p {
+            font-size: 2rem;  /*Tarayıcı varsayılanı olarak kapsayıcı elemanın değerini alıp 2rem ile çarpar ve p için font-size değerini elde eder. Kapsayıcı elemanı html de arar. 16x2=32*/
+        /* }*/
+        /* #kutu-1 h2 {
+            font-size: 3rem; /*16x3=48px*/
+        /* } */
+
+/*Bütün elemanlara orantısal bir değer vermek yerine body kapsayıcı elemanına font değeri verebiliriz. Böylece html in 10px ine karşılık body etiketi lendini 16px olarak ayarlar.*/
+        body {
+            font-size: 1.6rem; 
+        }
+        @media (min-width: 576px) {
+            html {
+                font-size: 14px;
+            }
+            #kutu-1 h2 {
+                font-size: 1.8rem;
+            }
+        }
+        @media (min-width: 768) {
+            html {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- em ifadesi kapsayıcı elemana bakar. -->
+    <div id="kutu-1">
+        <h2>Lorem, ipsum dolor.</h2>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis voluptas aut ad. Aperiam dicta dolorum fugit suscipit obcaecati tenetur cum quibusdam deserunt dolorem vero officiis voluptates, error, doloremque autem distinctio.
+        </p>
+    </div>
+
+    <div id="kutu-2">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis voluptas aut ad. Aperiam dicta dolorum fugit suscipit obcaecati tenetur cum quibusdam deserunt dolorem vero officiis voluptates, error, doloremque autem distinctio.
+        </p>
+    </div>
+</body>
+</html>

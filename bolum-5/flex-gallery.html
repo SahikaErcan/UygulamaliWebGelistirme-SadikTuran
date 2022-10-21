@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;1,300&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <style>       
+        h1{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .gallery div {
+            flex-grow: 1;
+            margin: 3px 3px 0 3px;
+            /*resme transform-scale() uyguladığımız için resim divin dışına doğru taşarak %20 oranında büyür. Biz resmin taşmasını değil div içerisinde büyümesini-yakınlaşıyormuş gibi görünmesini istersek;  */
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: 100%; /*resim farklı boyutlarda olursa diye içerisinde bulunduğu container a sığdır diyoruz.*/
+
+            /* Resmin zerine geldiğimizde div içerisinde büyüyen resmi daha yavaş büyürken görünmesini istersek; */
+            transition: transform .3s ease-out;
+            
+            /*resmi çerçeve içerisine nasıl daha güzel bir görüntü de yerleştirebileceğimizi sağlar.*/
+            object-fit: cover; /*çerçeve içerisine daha düzgün daha orantılı bir şekilde yerleştirmeye çalışır.*/
+        }
+        img:hover {
+            transform: scale(1.2); /*resmin üzerine geldiğimizde resmi 1.2 oranında büyültür.*/
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="gallery">
+        <div>
+            <img src="https://picsum.photos/300/200?random=1">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/300?random=2">
+        </div>
+        <div>
+            <img src="https://picsum.photos/400/500?random=3">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/300?random=4">
+        </div>
+        <div>
+            <img src="https://picsum.photos/500/300?random=5">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/400?random=6">
+        </div>
+        <div>
+            <img src="https://picsum.photos/300/300?random=7">
+        </div>
+        <div>
+            <img src="https://picsum.photos/200/300?random=8">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+   
+            height: 500px;
+            background-color: #a67012;
+        }
+        .item {
+            background-color: #f3e6c4;
+            color: #926704;
+            border: 1px solid #926704;
+            font-size: large;
+            font-weight: 600;
+            padding: 30px;
+            margin: 20px;
+
+            /*Öğrendiğimiz 3 özelliği (flex-grow, flex-basis, flex-shrink) tek bir özellik de kullanabiliyoruz.*/
+
+            /*grow - shrink - basis */
+            /* flex: 0 0 200px; */
+
+
+
+
+
+            /*flex-grow: elemanların hangi oranda büyütüleceği ile ilgilenen bir özellik. Varsayılan değeri 0 dır. Büyütülme özelliği içerik kadar yer kaplıyor.*/
+            /* flex-grow: 0; */
+
+            /*Container ın bulunduğu genişlik kadar orantısal olarak eşit bir şekilde kaplamasını istersek değeri 0 dan farklı pozitif bir değer yaparız.*/
+            /* flex-grow: 1; */
+
+
+        }
+        .item-1 {
+            /*Sadece seçtiğim kutulara bir genişlik vermek istersek kutuların spesifik sınıflarına flex grow uygularız.*/
+            /* flex-grow: 2; */
+
+
+
+            /*Satırın yüzde 25 ini kapla diyebiliriz.*/
+            flex: 25%;
+
+            /*Kutuların sıraları ile oynayabiliriz. Varsayılan değri 0 dır.*/
+            order: 3;
+        }
+        .item-2 {
+            /*Yukarıda herhangi pozitif bir değer vermemiz yeterli demiştik. Ancak kutuların birine 1 diğerine 2 verdiğimizde ilgili kutular, sabit boyutlu kutular haricinde kalan alanı kendi arasında orantısal olarak paylaşarak büyüme gösterirler.*/
+
+            /* flex-grow: 1; */
+
+            /*Tarayıcıyı küçülttüğümüzde yer kalmadıkça her bir kutu içerik kadar yer kaplayacaktır.*/
+
+
+            /*Satırın yüzde 25 ini kapla diyebiliriz.*/
+            flex: 25%;
+
+            /*Kutuların sıraları ile oynayabiliriz.*/
+            order: -1;
+        }
+        .item-3 {
+            /*flex-basis özelliği ile başlangıç genişliği verebiliyoruz.*/
+
+            /* flex-basis: 200px; */
+           
+            /*Tarayıcıyı küçülttüğümüzde 200px lik kutunun genişliği tarayıcıda yer kalmayana kar sabit kalır. Yer kalmayınca içerik kadar yer kaplar. Diğer kutular tarayıcı küçüldükçe orantısal olarak yine küçülme gösterecektir.*/
+
+            /*Ekranı daralttığımızda da ilgili kutunun 200px in altına inmesin istiyorsak flex-shrink özelliği kullanılır. Varsayılan değeri 1 dir. İçerik kadar yer kaplama durumunu gösterir. Ancak buna 0 değerini verirsek 200px sabit kalacaktır.*/
+            
+            /* flex-shrink: 0; */
+
+
+            /*Satırın yüzde 25 ini kapla diyebiliriz.*/
+            flex: 50%;
+
+            /*Kutuların sıraları ile oynayabiliriz.*/
+            order: 1;
+        } 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">item 1</div>
+        <div class="item item-2">item 2</div>
+        <div class="item item-3">item 3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(64, 106, 183);
+            padding: 0px 20px;
+            
+        }
+        nav a{
+            padding: 10px;
+            text-decoration: none;
+            font-size: 20px;
+            color: rgb(143, 177, 240);    
+            align-self: center;
+        }
+      
+        .navigation {
+            display: flex;
+            list-style: none;
+        }
+        .navigation a {
+            display: block;
+            padding: 16px;
+        }
+        .navigation a:hover {
+            background-color: rgb(81, 120, 192);
+        }
+        .navigation li:last-child {
+            display: none;
+        }
+
+        @media (max-width: 600px) {       
+            nav {
+                flex-direction: column;
+                position: relative;
+                padding: 0;
+            }
+            nav a {
+                align-self: flex-start;
+            }
+            #logo {
+                padding-left: 20px;
+            }
+            .navigation {
+                flex-direction: column;              
+            }
+            .navigation a{
+                text-align: center;
+                padding: 10px;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            .navigation li:last-child{
+                position: absolute;
+                display: block;
+                top: 0;
+                right: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="" id="logo">Logo</a>
+        <ul class="navigation">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="#"><i class="fa fa-bars"></i></a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>

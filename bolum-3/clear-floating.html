@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            /* text-align: right;*/
+        }
+        .box {
+            height: 150px;
+            width: 150px;
+            background-color: cadetblue;
+            /*display: inline-block;*/         
+            float: right;
+        }
+        #box1 {
+            float: left;
+        }
+        /* clearfix uygulanan elemanın sonunda görülen bir element oluşturuyoruz. Bu elemante
+        clear:both; dediğimizde aslında eklemeden görünmeyen bir element ekliyoruz.
+        Dolayısı ile bu elementin içeriği (countent: "";) olmasın şeklinde ayarlıyoruz. 
+        Önemli olan içeriği olmayan elemente bir clear uygulamaktır. Sonraki elemanın bir
+        blok eleman olduğunu da temizlemeden önce belirtmemiz gerekiyor.*/
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <!--Float uygulanan elemanları kapsayan container kapsayıcı elemanına bir tane sınıf ekliyoruz.
+    Genellikle "clearfix" şeklinde isimlendirilir.-->
+    <div id="container" class="clearfix">
+        <div class="box" id="box1">Kutu 1</div>
+        <div class="box">Kutu 2</div>
+        <div class="box">Kutu 3</div>
+        <!--Akışı şu şekilde de düzeltebiliriz.
+        Hem sağ da hem de solda float uygulandığı için both diyoruz. Her ikisini de temizle-->
+        <!--<div style="clear: both;"></div>-->
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi incidunt reiciendis eveniet corporis accusamus praesentium inventore aliquam doloribus. Earum temporibus, accusamus consequatur totam laudantium harum debitis modi magni ab beatae?</p>
+</body>
+</html>

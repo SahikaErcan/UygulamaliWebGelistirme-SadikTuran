@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+
+            /* gap özelliği ile satır da ve kolon seviyesinde olan elemanlar arasında boşluk bırakabiliriz */
+            gap: 20px;  /*Yan yana olan kartlar arasında hem yatay da hem dikeyde 20px boşluk bırakır.*/
+
+            /* Sadece satır seviyesinde boşluk bırakabiliriz. Satırlar arasında 20px boşluk oluşur.*/
+            /* row-gap: 20px; */
+            /*Aynı şey kolon içinde geçerlidir. Kolonlar arasında boşluk bırakmak için; */
+            /* column-gap: 50px; */
+
+
+            flex-wrap: wrap; /*Tarayıcı küçüldüğünde içerikleri alt satıra kaydırır.*/
+
+            /* align-items: center; */ /* wrap ile alt satıra kayan kutucuklar içerisinde bulundukları sayıya göre kendilerini ortalarlar.*/
+
+            align-content: center;  /* Biz bunu istemiyoruz. Kapsayıcı elemana göre ortalaması için bu özelliği kullanırız. Böylece elemanlar yükseklik için tam oraya gelir. Bu özellik içerisinde de align-items da olan özellikler vardır.*/
+
+            /* align-content: flex-end; */
+            /* align-content: flex-start; */
+            /* align-content: space-around; */
+            /* align-content: space-between; */
+            /* align-content: space-evenly; */
+
+            height: 500px;
+            background-color: #a67012;
+        }
+        .item {
+            background-color: #f3e6c4;
+            color: #926704;
+            padding: 30px;
+            /* margin: 20px; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">item 1</div>
+        <div class="item item-2">item 2</div>
+        <div class="item item-3">item 3</div>
+        <div class="item item-4">item 4</div>
+        <div class="item item-5">item 5</div>
+        <div class="item item-6">item 6</div>
+        <div class="item item-7">item 7</div>
+        <div class="item item-8">item 8</div>
+    </div>
+</body>
+</html>

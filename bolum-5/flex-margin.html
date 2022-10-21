@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+   
+            height: 500px;
+            background-color: #a67012;
+
+            /* align-items: center;
+            justify-content: center; */
+        }
+        .item {
+            background-color: #f3e6c4;
+            color: #926704;
+            font-size: 25px;
+            padding: 30px;
+            margin: 20px;
+
+            /* align-items: center;
+            justify-content: center;  ile uğraşmak yerine her ulaşmak istediğimiz yapıya bir margin değeri verebiliriz.*/
+            /* margin: auto; */ /*4 köşeden kalan boşlukları eşit bir şekilde dağıt diyoruz.*/
+            /* margin-top: auto; */
+            /* margin-bottom: auto; */
+            /* margin-right: auto; */
+
+
+
+            /* margin-left: auto;
+            margin-bottom: auto; */
+            /*Eleman kendini hem soldan hem alttan iter ve sağ üst köşeye konumlanır.*/
+        }
+
+        /*Her bir elemana margin: auto verirsek kendi kapsamı içerisinde kendini hizalar-ortalar.*/
+        .item-1 {
+            /* margin: auto; */
+
+            /*item-1 kendine sağ taraftan boşluk bıraksın yani kendisini sol itsin diyebiliriz. Bu durum da item-2 yi de sağ tarafa doğru iteler. aynı şeyi item-2 sınfına margin-left:auto şeklinde de yazsaydık değişen bir şey olmayacaktı.*/
+            /* margin-right: auto; */
+
+
+            margin-left: auto;
+            margin-top: auto; /*soldan ve üstten itele diyoruz bu durumda kendi kapsamı içerisinde sağ alt köşede konumlanır.*/
+
+        
+        }
+        .item-2 {
+            /* margin: auto; */
+
+            margin-right: auto;
+            margin-top: auto; /*sağdan ve üstten itele diyoruz bu durumda kendi kapsamı içerisinde sol alt köşede konumlanır.*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1">item 1</div>
+        <div class="item item-2">item 2</div>
+    </div>
+</body>
+</html>

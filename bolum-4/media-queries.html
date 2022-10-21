@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #928d8d;
+        }
+
+        h1 {
+            display: none;
+        }
+
+        @media (max-width: 565px){
+            #phone h1 {
+                display: block;
+            }
+        }
+        /*landscape : mobil yatayda kullanım*/
+        @media (min-width: 566px) and (max-width: 767px) {
+            #landscape h1 {
+                display: block;
+            }
+            body {
+                background-color: lightslategray;
+            }
+        }
+        /*tablet*/
+        @media (min-width: 768px) and (max-width: 991px) {
+            #table h1 {
+                display: block;
+            }
+            body {
+                background-color: #ebdfdf;
+            }
+        }
+
+        /* desktop */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            #desktop h1 {
+                display: block;
+            }
+            body {
+                background-color: ghostwhite;
+            }
+        }
+
+        /* large desktop */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            #large h1 {
+                display: block;
+            }
+            body {
+                background-color: #cdcded;
+            }
+        }
+
+        /* xlarge desktop */
+        @media (min-width: 1400px) {
+            #xlarge h1 {
+                display: block;
+            }
+            body {
+                background-color: #9e9ecf;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="phone"><h1>phone</h1></div>
+    <div id="landscape"><h1>landscape</h1></div>
+    <div id="table"><h1>table</h1></div>
+    <div id="desktop"><h1>desktop</h1></div>
+    <div id="large"><h1>large</h1></div>
+    <div id="xlarge"><h1>xlarge</h1></div>
+
+
+</body>
+</html>

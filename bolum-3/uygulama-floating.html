@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        h2 {
+            margin: 0;
+        }
+        header, footer {
+            background-color: #A7D2CB;
+            color: #874C62;
+            padding: 20px;
+        }
+        .col {
+            float: left;
+            padding: 15px 15px 15px 0;
+        }
+        .menu {
+            width: 25%;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #874C62;
+            color: #FFF;
+            font-size: 18px;
+        }
+        .menu li:hover {
+            cursor: pointer; /* imleç el işareti şeklinde olur.*/
+            background-color: #b47c90;
+        }
+        .content {
+            width: 75%;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>  
+        <h1>Header</h1>
+    </header>
+    <main class="clearfix">
+        <div class="menu col">
+            <ul>
+                <li>Html</li>
+                <li>Css</li>
+                <li>JavaScript</li>
+            </ul>
+        </div>
+        <div class="content col">
+            <h2>Komple Web Geliştirme Eğitimi</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus eum maxime ipsam voluptatum dolores id, quam vel, quae tenetur amet corporis quia accusamus distinctio officia quas repellendus nesciunt, iure repudiandae.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias cum autem repudiandae consequuntur consequatur iste, possimus labore quibusdam vero repellendus debitis corrupti, neque excepturi natus, provident quo animi nisi et.</p>
+        </div>
+    </main>
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+</body>
+</html>

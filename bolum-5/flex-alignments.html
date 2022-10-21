@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+   
+            /* flex-direction -> Elemanların yönünü belirleyebiliyoruz.*/
+            flex-direction: column;  /* Varsayılanı row yani satırdır. Buna istinaden aşağıdaki gibi yatay da justify-content, dikey de align-items ifadelerini kullanabiliyorduk. Ancak bunu column yaptığımız an justify-content dikey, align-items ise yatay işlemini gerçekleştirir.*/
+
+
+            /*Yatayda konumlandırmak istersek*/
+            /* justify-content: center; */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: space-around; */  /* başlangıçta soldan x birim boşluk bırakılırken her bir eleman arasına 2x birim boşluk bırakılır. */
+            /*justify-content: space-between;*/  /* sağ soldan boşluk bırakılmaz elemanlar arasına boşluk bırakılır.*/
+            /*justify-content: space-evenly;*/  /*Hem baştan hem sondan hem de aralarda eşit boşluklar bırakılır.*/
+
+
+            /*Dikeyde konumlandırmak istersek*/
+            height: 500px;
+            /* align-items: stretch; */   /*Container kadar yer kaplarlar*/
+            /* align-items: flex-start; */  /*Bütün elemanlar içerik kadar yer kaplarlar. Yüksekliğin en üstüne gelir.*/
+            /* align-items: flex-end; */
+            /* align-items: center; */
+
+            /*Yatayda ve dikeyde ortalamak istersek;
+            hem      justify-content: center;
+            hem de   align-items: center;
+            ifadelerini kullanmamız gerekir.
+            */
+
+
+            /*flex-direction ile işlem yönünü değiştirmiştik şimdi de bunun üzerinden uygulama yapalım.*/
+            align-items: center;
+            justify-content: space-between;
+
+            background-color: #a67012;
+            /* padding: 15px; */
+        }
+        .item {
+            background-color: #f3e6c4;
+            color: #926704;
+            border: 1px solid #926704;
+            font-size: large;
+            font-weight: 600;
+            padding: 30px;
+            /* margin: 20px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">item 1</div>
+        <div class="item">item 2</div>
+        <div class="item">item 3</div>
+        <div class="item">item 4</div>
+    </div>
+</body>
+</html>

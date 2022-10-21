@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Attribute selector*/
+        /*
+        a[target] {
+            background-color: brown;
+        }
+        [class] {
+            background-color: cadetblue;
+        }
+        */
+
+        /*Attribute value selector*/
+        /* a[class="active"] {
+            background-color: orange;
+        } */
+
+        /* Attribute "*" selector: aşağıdaki uygulamaya göre başında ya da sonunda ne olduğu önemki değil içinde active geçsin yeter.*/
+        /* [class*="active"] {
+            background-color: darkgreen;
+        } */
+
+        /* Attribute "~" selector: başında sonunda ne olduğu önemli. sadece active yazanı alır. */
+
+        /* [class~="active"] {
+            background-color: darkblue;
+        } */
+
+        /* Attribute "|" selector: active clası en başta olanlar seçilir. Class isminin içinde active geçmesi yeterlidir. başka class ismi olmayacak. */
+        /* [class|="active"] {
+            background-color: firebrick;
+        } */
+
+        /* Attribute "^" selector: active clası en başta olanlar seçilir. Class isminin içinde active geçmesi yeterlidir. başka class ismi olabilir. */
+        /* [class^="active"] {
+            background-color: firebrick;
+        } */
+
+        /* Attribute "$" selector: active classı sonda olursa seçer. */
+        [class$="active"] {
+            background-color: darkolivegreen;
+        }
+    </style>
+</head>
+<body>
+    <span class="active span text">TEXT1</span>
+    <br><br>
+    <span class="span text active">TEXT2</span>
+    <nav>
+        <a href="" target="_blank">Home</a>
+        <a href="" class="active">About</a>
+        <a href="" class="link">Countact</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,294 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+@import url(buttons.css);
+@import url(base.css);
+
+html{
+    /*scrol un yavaşça yukarı çıkmasını sağlar. */
+    scroll-behavior: smooth;
+}
+main{
+    min-height: calc(100vh - 138px);
+}
+.main-header {
+    background-color: #FC997C;
+    padding: .8rem 1.6rem;
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+#showcase {
+    /*Arkaplana renk vermek yerine resim ekliyoruz. "url()" */
+    background-image: 
+        linear-gradient(to bottom, rgba(252, 153, 124, 0.2), rgba(250, 81, 30, 0.2)),
+        url("../img/bg.jpeg");
+    /*resmi 500px in içerisine sığdırmak istiyoruz.*/
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 80vh;
+    color: #2E4C6D;
+    position: relative;
+}
+#showcase .content {
+    color: #FFF;
+    background: rgba(46, 76, 109, 0.3);
+    padding: 2rem;
+    width: 60%;
+    border-radius: 1rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#showcase h1{
+    /*texti resme göre ortalıypruz*/
+    position: absolute;
+    margin: 0;
+    top: 50%; /*sınırdan yazının üst çizgisine kadar olacak %50 lik kısmı ayarlar. Yazının yarısını da %50 lik kısma dahil etmesini isteriz.*/
+    left: 50%; /*Aynı şekilde yazının başladığı yere yani ilk harfe kadar %50 lik kısmı alır. Biz yazının yarısını %50 lik kısma dahil etsin isteriz.*/
+    transform: translate(-50%, -50%);/*Bunun için transform özelliği kullanılır. %50 yani kandi genişliğinin yarısı kadar sola git ve kendi yüksekliğinin %50 u kadar yukarı git diyoruz.*/
+    color: #FFF;
+
+}
+@media (min-width: 576px) {
+    #showcase {
+        height: 50vh;
+    }
+}
+@media (min-width: 768px) {
+    #showcase {
+        height: 60vh;
+    }
+}
+@media (min-width: 992px) {
+    #showcase {
+        height: 70vh;
+    }
+}
+
+#how-it-works {
+    padding: 1rem;
+    color: #2E4C6D;
+    text-align: center;
+}
+.features__left {
+    background-image: 
+    linear-gradient(to bottom, rgba(252, 153, 124, 0.2), rgba(250, 81, 30, 0.2)),
+    url("../img/features.jpeg");
+    background-size: cover;
+    background-position: top center;
+}
+.features__right{
+    background-color: #EDF5F7;
+    padding: 3rem;
+    vertical-align: top;
+}
+.features__left, .features__right {
+    height: 35rem;
+} 
+.features__right h3 {
+    font-size: 3rem;
+}
+.icon-box h3 {
+    color: #3E4555;
+    font-size: 2.6rem;
+}
+.icon-box i {
+    color: #FC997C;
+}
+.main-header__logo {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+}
+.main-nav {
+    width: calc(100% - 10rem);
+    display: inline-block;
+    text-align: right;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.main-nav__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.main-nav__item {
+    display: inline-block;
+    margin: 0 1rem;
+}
+.main-nav__item:last-child { /*Son elemana ulaşma*/
+    display: none;
+}
+@media (max-width: 600px) {
+    .main-nav__item {
+        display: none;
+    }
+    .main-nav__item:last-child {
+        display: block;
+    }
+    .responsive .main-nav__item{
+        display: block;
+        text-align: left;
+        margin: 1rem 0;
+    }
+    .responsive .main-nav__item:last-child {
+        position: absolute;
+        right: 40px;
+        top: 6px;
+    }
+    .responsive .main-nav {
+        display: block;
+    }
+    
+}
+.main-nav__item a {
+    text-decoration: none;
+    color: #FFF;
+}
+.main-nav__item a:hover{
+    color: #2E4C6D;
+}
+
+.section-tittle {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #3E4555;
+    font-size: 3rem;
+}
+.plan {
+    text-align: center;
+    padding: 5px;
+}
+.plan__badge {
+    background-color: #FFF;
+    color: #FC997C;
+    padding: 8px;
+    border-radius: 5px;
+}
+.recommended_plan {
+    color: #FFF;
+    background-color: #396EB0!important;
+}
+.inner-plan {
+    background-color: #EDF5F7;
+    padding: 25px 10px;
+    border-radius: 5px;
+
+    /*Gölgelendirme : sağ/sol  üst/alt  blur  rengin dağıtılması  renk
+          box-shadow: 5px 10px 15px 5px #888888;*/
+    box-shadow: 0px 7px 29px 0px rgb(100, 100, 111, 0.2); /*0.2 -> rengin saydamlığını verir.*/
+    /*box-shodow özelliğinin 2 saniyede etkin olmasını istiyoruz.*/
+    transition: box-shadow .6s;
+}
+.inner-plan:hover {
+    box-shadow: 0px 7px 29px 0px rgb(100, 100, 111, 0.5)
+}
+.plan__features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+@media (min-width: 768px) {
+    .plan--featured {
+        position: relative;
+        top: -20px;
+    }
+}
+.plan__features li {
+    margin: 6px 0;
+}
+
+#backtotop {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+#backtotop i {
+    font-size: 45px;
+    color: #2E4C6D;
+    transition: color .6s;
+}
+#backtotop i:hover {
+    color: #396EB0;
+}
+.counter {
+    background: linear-gradient(to bottom, #FC997C 0%, #FC8B69 100%);
+    text-align: center;
+    padding: 50px;
+} 
+.counter__item {
+    font-size: 30px;
+    font-weight: 500;
+    color: #FFF;
+}
+.counter h4 {
+    margin: 0;
+    color: #FFF;
+}
+.card {
+    background-color: #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 10px 10px 40px rgba(52, 58, 94, 0.1);
+    /* position: relative;
+    top: 0; */
+    transition: all .3s;
+}
+.card:hover {
+    /* top: -10px; */
+    transform: translateY(-10px); /* position top gibi ifadeler ile uğraşmadan direk Y ekseninde 10 pxsel oynat diyebiliyoruz.*/
+}
+.card-container {
+    padding: 10px;
+}
+.card-image {
+    max-height: 350px;
+}
+.card-body {
+    padding: 30px;
+}
+footer {
+    background-color: #2E4C6D;
+    padding: 30px;
+}
+footer a {
+    color: #FFF;
+    font-size: 18px;
+    text-decoration: none;
+}
+footer ul {
+    margin: 0;
+    padding: 0;
+}
+footer ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 5px;
+}
+#social-links {
+    text-align: right;
+}
+.fab, .fab, .far {
+    padding: 10px;
+    border-radius: 50%;
+}
+.fab:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+    background-color: #3B5998;
+    color: #FFF;
+}
+.fa-twitter {
+    background-color: #55ACEE;
+    color: #FFF;
+}
+.fa-instagram {
+    background-color: #125688;
+    color: #FFF;
+}

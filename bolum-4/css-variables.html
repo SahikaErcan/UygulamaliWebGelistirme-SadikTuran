@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {  /* root içinde tanımlanan değişkenler globaldir.*/
+            --cream: #D0B8A8;
+            --white: #FFF;
+
+            --primary: #A7D2CB;
+            --warning: #F2D388;
+            --bg-primary: #C4D7E0;
+            --button-primary: #6E85B7;
+            --text-primary: #525E75;
+        }
+        body {
+            /*root u ezebiliriz.*/
+            --cream: #7D6E83;
+
+            background-color: var(--cream);
+        }
+        h2 {
+            border-bottom: 2px solid var(--cream);
+        }
+        .container {
+            color: var(--cream);
+            background-color: var(--white);
+            padding: 20px;
+        }
+        button {
+            background-color: var(--white);
+            color: var(--cream);
+            border: 1px solid var(--cream);
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <div class="container">
+        <h2>Lorem, ipsum dolor.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, dicta quisquam quo voluptatum possimus repellendus perferendis modi aperiam minima veniam quasi non? Numquam voluptatum esse non quibusdam, officia magnam eos.</p>
+        <div>
+            <button>Ok</button>
+            <button>Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

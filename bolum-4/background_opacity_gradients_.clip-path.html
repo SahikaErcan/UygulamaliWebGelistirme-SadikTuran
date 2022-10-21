@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*html, body {
+            height: 100%;
+        }*/
+
+        body {
+            margin: 0;
+        }
+        #header {
+            position: relative; /* yüksekliği 50vh yaptığımızda h1 html e göre absolute olduğu için resme göre ortalanmaz bu nedenle h1 in kapsayıcı elemanı olan header ı relative yapıyoruz.*/
+            background-color: brown;
+            /*background-image: ; linear-greadient uygulaması için resim olmadığını düşünelim.*/
+            background-image: 
+                linear-gradient(to bottom right, rgba(165, 42, 42, 0.3), rgba(122, 31, 31, 0.2)), 
+                url("bg.jpg");
+            background-position: center; /*positiona sabit değer vermek yerine 50% 50% ya da center dediğimizde resmin tam ortasını gösterir*/
+            background-size: cover; /* cover: resmi çerceve içerisine sığdırır yerleştirir. */
+            /*
+            background-position: 100px 100px; sabit değer verdiğimizde yatayda dikeyde öteleme yapar.
+            background-size: 800px 600px;
+            */
+            background-repeat: no-repeat; /*ekrandaki resim tekrarını engeller*/
+            /*height: 100%;*/
+            height: 100vh;
+            /*width: 80vw;*/
+
+            clip-path: polygon(0 0%, 100% 0, 100% 80%, 0% 100%);
+        }
+        #header h1 {
+            margin: 0;
+            position: absolute;
+            font-size: 80px;
+            color: brown;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 70px;
+        }
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: brown;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Background Text</h1>
+        <img class="logo" src="logo.png" alt="">
+        <!--  <div class="cover"></div>  linear-gradient uygulaması için yokmuş gibi düşünelim-->
+    </div>
+</body>
+</html>

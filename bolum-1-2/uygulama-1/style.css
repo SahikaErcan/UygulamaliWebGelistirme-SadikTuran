@@ -1,0 +1,9 @@
+h1{
+    font-size: 16px;
+    text-align: center;
+}
+li {
+    list-style-type: none;
+    text-decoration: line-through;
+    background-color: #EBE645;
+}
