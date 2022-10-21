@@ -36,3 +36,39 @@ img {
 .text-center {
     text-align: center;
 }
+
+/* navbar */
+.navbar {
+    display: flex; /* Burada oluşturduğumuz 2 elemanımız var. (h1 ve nav) navbar bizim için artık flex-box container ve altındaki elemanlar ise bir flex-item elemanıdır. Bu flex-itemların yan yana gelmesini istiyoruz.*/
+    align-items: center; /*h1 ve nav kendi kapsamları içerisinde ortalansın*/
+    justify-content: space-between; /* yatay da elemanlar (h1 ve nav) arasında eşit boşluk bırakıyoruz.*/
+    background-color: var(--dark);
+    opacity: 0.8;
+    color: var(--white);
+    position: fixed; /*En üst de navbarın sabit kalmasını istiyoruz.*/
+    top: 0;
+    width: 100%; /*Fixed dediğimiz zaman içerik kadar yer kaplıyordu. Dolayısıyla genişliğini kaybediyor. Bundan dolayı genişlik değeri veriyoruz.*/
+    height: 70px;
+    padding: 0 3rem; /*html e verdiğimiz 10px lik font-size değeri ile responsive tasarıma uygun olarak 30px değerine karşılık gelir.*/
+}
+.navbar a {
+    /*navbar a verdiğimiz renk sadece içerisinde bulunduğu h1 etiketine etki ediyor. nav etiketinin altındaki a etiketlerine etki etmez. Çünkü containera verdiğimiz color rengi alt elemanlara aktarılamaz. Bizim ekstra o etiketlere ilgili özelliği vermemiz gerekiyor.*/
+    color: var(--white);
+    padding: 1rem 2rem;
+    margin: 0 .5rem;
+}
+.navbar a:hover {
+    border-bottom: 2px solid var(--warning);
+}
+.navbar ul {
+    display: flex; /*ul etiketini flex-container elemanı yapıyoruz ve containerın altında bulunan elemanlar flex-item olur. Biz bu flex-itemları yan yana getiriyoruz.*/
+}
+.navbar .brand {
+    font-weight: 400;
+}
+.navbar h1 {
+    font-size: 3rem;
+}
+.navbar span {
+    color: var(--warning);
+}
