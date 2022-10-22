@@ -9,6 +9,7 @@
 }
 html {
     font-size: 10px;  /* rem kullandığımzıda 10 px baz alacağız*/
+    scroll-behavior: smooth; /*linkler arası geçişlerin yumuşak olmasını sağlarız.*/
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -86,6 +87,10 @@ img {
     height: 100vh; /*Kullanıcının görmüş olduğu görünür alanı viewport height ı %100 tanımlıyoruz. Resim kullanıcı tarayıcısının genişlik ve yüksekliğine göre kendini uydurur.*/
     color: var(--white);
     position: relative; /*main-header::before işlemi için ekledik.*/
+}
+.main-header.blog { /*main-header sınıfını seçiyorum ancak main-header sınıfı aynı zamanda blog sınfıı da olacak diyoruz. Sınıfları bu şekilde ifade ederken aralarına boşluk bırakılmaz.*/ 
+    background-image: url(../img/bg-2.jpeg);
+    height: 50vh;
 }
 .main-header .content {
     display: flex;
@@ -194,6 +199,15 @@ img {
 }
 .contact h2 {
     font-size: 4rem;
+}
+
+/* ARTİCLE */
+.articles {
+    padding: 3rem 5rem;
+}
+.article {
+    margin-top: 1.5rem;
+    color: var(--white);
 }
 
 /* FOOTER */

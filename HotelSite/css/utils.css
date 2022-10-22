@@ -110,6 +110,14 @@
 .flex-columns .column {
     flex: 1; /* iki dive de aynı genişliği vermiş oluyoruz.*/
 }
+.flex-columns.article .column:nth-child(odd) { /*article clasına sahip olan flex-colums sınıfının columns etiketli elementine ulaşıyoruz.*/
+    /*nth-child(odd): sıralı divler arasından 1 3 5 gibi tek sıralı olanları seç diyoruz.*/
+    flex: 2; /* resime 2 birimlik genişlik ver diyoruz.*/
+}
+.flex-columns.article .column:nth-child(even) { 
+/*nth-child(even): sıralı divler arasından 2 4 6 gibi çift sıralı olanları seç diyoruz.*/
+    flex: 3; /* içeriğe 3 birimlik genişlik ver diyoruz.*/
+}
 .flex-columns .column .column-1,
 .flex-columns .column .column-2 {
     height: 100%;
@@ -165,9 +173,12 @@
         padding: 10px;
     }
     .flex-columns .column {
-        flex: 100%; /*her bir column yani div içinde bulunduğu container ı tamamen kaplasın diyoruz.*/
+        flex: 100% !important; /*her bir column yani div içinde bulunduğu container ı tamamen kaplasın diyoruz.*/
+
+        /*!important dediğimizde buradaki kısım her zaman etkin olur. Peki bunu neden yaptık? Blogs sayfasında blogların olduğu kısımları flex=2 ve flex=3 şeklinde belirtmiştik. Bunu yaparken sınıfları özelleştirerek kullandığımız için baskın geldiler ve mobil görüntüde divler alt alta gelmeyi reddettiler. Bundan dolayı bu kısmı baskın yapma ihtiyacı duyduk. Ne dediğimi anlamadıysan !important ifadesini kaldırıp blog sayfasındaki değişikliği gözlemle*/
     }
     .flex-grid .column {
         flex: 50%; /*yan yana 2 resim görünsün istiyoruz.*/
     }
+
 }
