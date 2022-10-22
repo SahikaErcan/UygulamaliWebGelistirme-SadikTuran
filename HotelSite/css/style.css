@@ -133,3 +133,15 @@ img {
     border-radius: 50%; /* Yuvarlak bir border oluşur.*/
     margin-bottom: 1.5rem;
 }
+
+/* ABOUT */
+#about {
+    color: var(--white);
+}
+#about h2 {
+    font-size: 4rem;
+    font-weight: 400;
+}
+#about p {
+    margin: 2rem 0;
+}
