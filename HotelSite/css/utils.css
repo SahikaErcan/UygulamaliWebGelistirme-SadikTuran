@@ -77,5 +77,16 @@
 }
 
 /* flex items */
+.flex-items {
+    display: flex;
+    justify-content: center; /* yatayda itemlar ortalansın*/
+    text-align: center; /*yazılar kendi içerisinde ortalansın*/
+    height: 100%;
+}
+.flex-items > div { /*flex-items içerisindeki divler*/
+    padding: 20px;
+    flex-basis: 100%; /*başlangıç genişliği*/
+}
+
 
 /* flex grid */
