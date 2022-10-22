@@ -108,11 +108,28 @@ img {
 .main-header * { /*Oluşturduğumuz saydamlık yazıları da etkiledi bundan dolayı main-header ın altındaki her şey ön plana çıksın istiyoruz.*/
     z-index: 5; /*nesnelerin varsayılan z-index değeri 0 dır. Böylece elemanlar saydam remin üzerine gelecektir.*/
 }
-.main-header h1 {
+.main-header .content h1 {
     font-size: 5.5rem;
 }
 .main-header .content p {
     font-size: 2.3rem;
     max-width: 60rem; /*İçeriğin kaplayacağı max genişliği 600px olarak ayarlıyoruz.*/
     margin: 2rem 0 3rem;
+}
+
+
+/* ICONS */
+.icons {
+    padding: 30px;
+}
+.icons h3 {
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.icons i {
+    background-color: var(--warning);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: 50%; /* Yuvarlak bir border oluşur.*/
+    margin-bottom: 1.5rem;
 }
