@@ -37,7 +37,8 @@ img {
     text-align: center;
 }
 
-/* navbar */
+
+/* NAVBAR */
 .navbar {
     display: flex; /* Burada oluşturduğumuz 2 elemanımız var. (h1 ve nav) navbar bizim için artık flex-box container ve altındaki elemanlar ise bir flex-item elemanıdır. Bu flex-itemların yan yana gelmesini istiyoruz.*/
     align-items: center; /*h1 ve nav kendi kapsamları içerisinde ortalansın*/
@@ -71,4 +72,47 @@ img {
 }
 .navbar span {
     color: var(--warning);
+}
+
+
+/* HEADER */
+.main-header {
+    background-image: url("../img/bg-1.jpeg");
+    background-repeat: no-repeat; /*tekrarlamayı yatayda ve dikeyde kapatıyoruz.*/
+    background-size: cover; /*resmi çerçeve içerisine yerleştirmesini istiyoruz.*/
+    background-position: center; /*resmin tam orta kısmını görmek istediğimizi belirtiyoruz.*/
+    height: 100vh; /*Kullanıcının görmüş olduğu görünür alanı viewport height ı %100 tanımlıyoruz. Resim kullanıcı tarayıcısının genişlik ve yüksekliğine göre kendini uydurur.*/
+    color: var(--white);
+    position: relative; /*main-header::before işlemi için ekledik.*/
+}
+.main-header .content {
+    display: flex;
+    flex-direction: column; /*flex-itemlar (h1,p ve a etiketleri) alt alta gelmiş olur.*/
+    align-items: center; /*Bunları kendi çerçevelerinde yatayda ve dikeyde ortalıyoruz.*/
+    justify-content: center; /*Divin tam ortasına alıyoruz.*/
+    text-align: center; /*Kendi çerçevesinde yazıları ortalıyoruz.*/
+    /*content divinin yüksekliği içerik kadar. Bu div elemanı ilgili headerın yüksekliği kadar yer kaplaması gerekiyor ki o yüksekliğin içerisinde kendisini ortalayabilsin.*/
+    height: 100%; /*İçerisinde bulunduğu containerın (main-header) yüksekliği kadar yer kaplamasını istiyoruz.*/
+}
+
+.main-header::before {
+    /* resmi gölgeli filtreli hale getirmek için main-headerın öncesinde görünmez bir element oluşturuyoruz. Bu elemente bir yükseklik vererek buna bir zemin rengi vereceğiz.*/
+    content: ""; /*İçeriği boş*/
+    position: absolute; /*absolute nesne header a göre konumlansın istiyoruz. Bundan doalyı header etiketine position:relative özelliğini ekliyoruz. Böylece headerın içerisinde header kadar yer kaplayacaktır. İgili kapsam içinde başlayacak bir absolute bir nesne*/
+    top: 0; /* İlgili headerın tam üst noktasından başlasın istiyoruz.*/
+    left: 0; /* yani boş bir içerik 0 a 0 konumundan başlasın diyoruz.*/
+    width: 100%; /*İçerisinde bulunduğu container ı tamamen kaplasın.*/
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /*saydam bir zemin rengi oluşturuyoruz.*/
+}
+.main-header * { /*Oluşturduğumuz saydamlık yazıları da etkiledi bundan dolayı main-header ın altındaki her şey ön plana çıksın istiyoruz.*/
+    z-index: 5; /*nesnelerin varsayılan z-index değeri 0 dır. Böylece elemanlar saydam remin üzerine gelecektir.*/
+}
+.main-header h1 {
+    font-size: 5.5rem;
+}
+.main-header .content p {
+    font-size: 2.3rem;
+    max-width: 60rem; /*İçeriğin kaplayacağı max genişliği 600px olarak ayarlıyoruz.*/
+    margin: 2rem 0 3rem;
 }
