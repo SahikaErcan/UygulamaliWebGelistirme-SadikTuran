@@ -1,3 +1,5 @@
+/* Özelleştirilmiş css kodları*/
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 * {
@@ -135,13 +137,100 @@ img {
 }
 
 /* ABOUT */
-#about {
+.about {
     color: var(--white);
 }
-#about h2 {
+.about h2 {
     font-size: 4rem;
     font-weight: 400;
 }
-#about p {
+.about p {
     margin: 2rem 0;
+}
+
+/* GALLERY */
+.gallery img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* CARDS */
+.card {
+    color: var(--white);
+    font-weight: 700;
+}
+.card-body {
+    padding: 2rem;
+}
+
+/* TEAMS */
+.teams img {
+    border-radius: 50%;
+}
+.teams img:hover {
+    opacity: 0.7;
+}
+
+/* CONTACT */
+.contact-form {
+    width: 100%;
+    padding: 2rem 0;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: .5rem;
+}
+.contact-form .form-control {
+    margin-bottom: 1.5rem;
+}
+.contact-form input {
+    width: 100%;
+    padding: 5px;
+    height: 40px;
+    border: 1px solid #f5f5f5;
+}
+.contact-form .btn {
+    margin-top: 20px;
+}
+.contact h2 {
+    font-size: 4rem;
+}
+
+/* FOOTER */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+}
+.footer a {
+    color: var(--danger);
+}
+.footer a:hover {
+    opacity: 0.7;
+}
+.footer .social a {
+    margin-right: 10px;
+}
+
+
+/* MOBİLE */
+@media(max-width:768px) {
+    html {
+        font-size: 9px;
+    }
+    .navbar {
+        flex-direction: column;
+        height: 120px;
+        padding: 20px;
+    }
+    .navbar a {
+        padding: 10px;
+        margin: 0 3px;
+    }
+    .teams img {
+        width: 70%;
+    }
 }
