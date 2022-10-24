@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .grid-container { /*Kapsayıcı eleman*/
+            display: grid;  
+            grid-template-columns: repeat(6, 1fr);  /* 1fr == auto*/
+            gap: 10px;  /* Kolonlar arasındaki mesafeyi margin ile hesaplamak gerine gap özelliğini alternatif olarak kullanabiliriz. Kapsayıcı elemana 4 köşeden 10px bırak diyoruz.*/
+            /* row-gap: 10px; */ /* Sadece satırdan 10px mesafe ver.*/
+            /* column-gap: 10px; */ /* Sadece sütundan 10px mesafe ver.*/
+
+            background-color: #034f84;
+        }
+        .grid-item {
+
+            background-color: #f7786b;
+            padding: 30px;
+            color: #FFF;
+            font-size: 25px;
+        }
+        .grid-item:first-child {
+            /*grid-column-start: 2;  /* 2. kolondan başlar.*/
+            /*grid-column-end: 5;   /* 5. kolona kadar genişleyen bir "item 1" elde ederiz.*/
+
+            /*Örneğin header kısmını bu şekilde yapabilriz.*/
+            /* grid-column-start: 1;
+            grid-column-end: 7;   */
+            /* item1 tarayıcı boydan boya kaplayacaktır.*/
+
+            /*satır için de yapabiliriz.*/
+            /* grid-row-start: 1; */
+            /* grid-row-end: 3;  /*2 satırı kaplamasını sağlıyoruz*/
+
+
+            /* start ve en şeklinde uzun uzun kullanmak yerine bunların kıs yolu var.*/ /* start / end */
+            /* grid-column: 2 / 5;  
+            grid-row: 1 / 3;   */
+
+            /*Tek tek kutuları saymakla uğraşmak istemiyorsak end yerine span 3 dediğimizde 3 tanem kutuyu kapla diyoruz. Bitiş noktasını belirtmek yerine kaç kutu kapması gerektiğini belirtiyoruz*/
+            /* grid-column: 2 / span 3;  
+            grid-row: 1 / span 2; */
+
+            /* column ve row u da ayrı ayrı belirmemize gerek yok*/ 
+            /* start satır / start column / end satır / end column*/
+            grid-area: 1 / 2 / span 3 / span 4;  /* 2.kolon 1. satırdan başlayıp 3 satır 4 kolon yer kaplar.*/
+        }
+    </style>
+</head>
+<body>
+     <div class="grid-container">
+        <div class="grid-item">item 1</div>
+        <div class="grid-item">item 2</div>
+        <div class="grid-item">item 3</div>
+        <div class="grid-item">item 4</div>
+        <div class="grid-item">item 5</div>
+        <div class="grid-item">item 6</div>
+        <div class="grid-item">item 7</div>
+        <div class="grid-item">item 8</div>
+        <div class="grid-item">item 9</div>
+        <div class="grid-item">item 10</div>
+        <div class="grid-item">item 11</div>
+        <div class="grid-item">item 12</div>
+        <div class="grid-item">item 13</div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .grid-container { /*Kapsayıcı eleman*/
+            display: grid;
+            /* grid-template-columns: 150px 250px 400px 150px; */  /*Kolon oluşturup kolonların genişliklerini belirtiyoruz. Kaç kolon varsa onları belirtmemiz gerekiyor. Genişlikler her zaman sabit tutuluyor. Tarayıcıyı küçülttüğümüzde scrollbar çıkacaktır. Dolayısı ile buı alanları sabit vermek yerine orantısal vermek isteyebiliriz.*/
+            /* grid-template-columns: 150px auto 200px auto; */ /*1. ve 3. kolonları sabit verip 2. ve 4. kolonlar tarayıcı genişliğine göre kalan alanları alarak boyutlanacaktır.*/
+            /* grid-template-columns: auto auto auto auto; */
+            /* grid-template-columns: auto auto 20%; */ /* 3. kolon rayıcının yüzde yirmisini alır geri kalan kolonlar ise kendi aralarında boyutu eşit paylaşırlar.*/
+            /* grid-template-columns: repeat(4, 200px); */ /*bütün kolonlara tek tek 200 200 200 gibi değerler vermek yerine repeat() özelliğini kullanabiliriz.*/
+            /* grid-template-columns: repeat(3,auto); */
+            /* grid-template-columns: 150px 200px 1fr;*/  /* "fr" bölüm oluştur demektir. 150 ve 200 pxlik kolonlar oluşturulduktan sonra kalan alan kolon3 e verilecektir. Auto demekle eş değer. Ancak 4. kolona da 2fr dediğimizde orantısal bir durum oluşuyor. */
+            /* grid-template-columns: 150px 200px 1fr 2fr; */ /* Geriye kalan alanı 1 e 2 oranında 3. ve 4. kolona dağıtıyoruz. */
+
+            /* grid-template-rows: 200px; */
+
+            /* Containerın belirli bir yüksekliği olsun*/
+            /* height: 800px; */
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 2fr; /* container kadar alanı 2 kolondan oluşacak şekilde 1 e 2 oranında ayırıyor. Eğer ikiden fazla içerik varsa her biri için yükseklik vermek zorunda değiliz. İçerik kadar alan kaplıyacaklardır.*/
+            grid-auto-rows: 3fr; /* Ya da geri kalan içerikler 3fr lık yer kaplasın böylece 1 ve 2 . rowlar 1 e 2 oranında yer kaplarken geriye kaln 3 oranında yer kaplayacaktır. Bunu görmek için yüksekliği kapatalım.*/
+
+            background-color: #034f84;
+            padding: 20px;
+        }
+        .grid-item {
+
+            background-color: #f7786b;
+            padding: 30px;
+            margin: 20px;
+            color: #FFF;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+     <div class="grid-container">
+        <div class="grid-item">item 1</div>
+        <div class="grid-item">item 2</div>
+        <div class="grid-item">item 3</div>
+        <div class="grid-item">item 4</div>
+        <div class="grid-item">item 5</div>
+        <div class="grid-item">item 6</div>
+        <div class="grid-item">item 7</div>
+        <div class="grid-item">item 8</div>
+        <div class="grid-item">item 9</div>
+        <div class="grid-item">item 10</div>
+        <div class="grid-item">item 11</div>
+        <div class="grid-item">item 12</div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .grid-container { /*Kapsayıcı eleman*/
+            display: grid;  /*Conteinerı, grid containera çeviriyoruz. Altındaki her bir eleman block eleman olarak tanımlanıyor. Bunun alternatifi "inline-grid" dir.*/
+            /* display: inline-grid; */  /* İçerik kadar yer kaplar.*/
+            background-color: #034f84;
+            padding: 20px;
+        }
+        .grid-item {
+
+            background-color: #f7786b;
+            padding: 30px;
+            margin: 20px;
+            color: #FFF;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+     <div class="grid-container">
+        <div class="grid-item">item 1</div>
+        <div class="grid-item">item 2</div>
+        <div class="grid-item">item 3</div>
+        <div class="grid-item">item 4</div>
+     </div>
+</body>
+</html>
