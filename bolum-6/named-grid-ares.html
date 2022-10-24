@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "header header header"
+                                 "sidebar content content"
+                                 "sidebar . ."
+                                 "box-1 box-1 box-1"
+                                 ". footer footer";
+            gap: 5px;
+        }
+        .header {
+            grid-area: header;
+            background-color: #4f5a3d;
+        }
+        .content {
+            grid-area: content;
+        }
+        .sidebar {
+            grid-area: sidebar;
+        }
+        .footer {
+            grid-area: footer;
+        }
+        .box-1 {
+            grid-area: box-1;
+        }
+        .header, .content, .sidebar, .footer, .box-1, .box-2, .box-3 {
+            border: 1px solid #2ba;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2>Page Header</h2>
+        </header>
+        <section class="content">
+            <h3>Lorem, ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dolore est ducimus rem placeat iusto quidem nesciunt quas, eius minima quos ad cum qui nam beatae amet ea non aut.</p>
+        </section>
+        <section class="sidebar">
+            <h2>Lorem, ipsum.</h2>
+            <ul>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum.</li>
+            </ul>
+        </section>
+
+        <div class="box-1">
+            <h3>Box 1</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus quisquam sit ea corporis beatae numquam voluptate incidunt similique facilis consequatur, et blanditiis aspernatur. Id eius suscipit natus reiciendis, possimus ipsam?
+        </div>
+        <div class="box-2">
+            <h3>Box 2</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus quisquam sit ea corporis beatae numquam voluptate incidunt similique facilis consequatur, et blanditiis aspernatur. Id eius suscipit natus reiciendis, possimus ipsam?
+        </div>
+        <div class="box-3">
+            <h3>Box 3</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus quisquam sit ea corporis beatae numquam voluptate incidunt similique facilis consequatur, et blanditiis aspernatur. Id eius suscipit natus reiciendis, possimus ipsam?
+        </div>
+        <div class="box-4">
+            <h3>Box 4</h3>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus quisquam sit ea corporis beatae numquam voluptate incidunt similique facilis consequatur, et blanditiis aspernatur. Id eius suscipit natus reiciendis, possimus ipsam?
+        </div>
+
+        <footer class="footer">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </footer>
+    </div>
+</body>
+</html>
