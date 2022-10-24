@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            /* grid-template-columns: minmax(200px, 1fr) 1fr 1fr; /* 1. kutu en az 200 px kadar küçülebilir düğer kutular küçülmeye devam ederken bu 200 de sabit kalır ancak tarayıcı genişliğine göre en fazla diğer kutularla aynı boyut olabilir. */ 
+            /* grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr); */
+            /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));  /* kutular 200px a kadar küldüğünde tarayıcıya dığmazsa bir alt satıra geçer son kutu. Tarayıcıyı büyülttüğümüzde de olmayan kutu için yer tahsis eder 200px boyutunda*/
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  /*her zaman satırı kaplar.*/
+            gap: 10px;
+        }
+        .item {
+            background-color: #b871ae;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">box 1</div>
+        <div class="item">box 2</div>
+        <div class="item">box 3</div>
+    </div>
+</body>
+</html>
