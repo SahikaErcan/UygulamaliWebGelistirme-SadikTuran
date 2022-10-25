@@ -68,3 +68,41 @@
     background-color: var(--primary-color);
     padding: 1rem;
 }
+
+/* NAVBAR */
+
+#main-nav {
+    background: var(--white-color);
+    position: sticky; /* Yukarıda sabit olarak kalsın*/
+    top: 0;
+    z-index: 3; /* Diğer elemanların üstünde kalmasını istiyoruz.*/
+}
+#main-nav .container {
+    display: grid;
+    grid-template-columns: 0.6fr 3fr 2fr;  /* img, ul ve div için 3 kolon ayırıyoruz.*/
+    padding: 1rem;
+    align-items: center;
+}
+#main-nav .logo {
+    width: 65px;
+}
+#main-nav ul {
+    display: flex;
+    justify-self: start;
+}
+#main-nav ul li a {
+    padding: 0.6rem;
+    font-weight: bold;
+}
+#main-nav ul li a.active { /*Aktif olan linkin arkası boyansın. Yani hangi sayfadaysa onun */
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 5px;
+}
+#main-nav ul li a:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+#main-nav .social-icons {
+    justify-self: end;
+}
