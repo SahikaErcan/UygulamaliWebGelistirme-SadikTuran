@@ -119,6 +119,9 @@ p {
     grid-template-columns: repeat(3,1fr);
     gap: 1rem;
 }
+#main-articles .card a:hover{
+    color: var(--primary-color);
+}
 
 /* FOOTER */
 
@@ -185,4 +188,7 @@ p {
     padding: .5rem 0;
     border-bottom: 1px dotted #555;
     width: 90%;
+}
+.page-container #categories ul li a:hover{
+    color: var(--primary-color);
 }
