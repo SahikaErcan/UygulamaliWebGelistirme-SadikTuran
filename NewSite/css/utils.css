@@ -39,6 +39,10 @@
     background-color: var(--primary-color);
     color: var(--white-color);
 }
+.bg-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
 .bg-light {
     background-color: var(--light-color);
     color: var(--dark-color);
@@ -87,5 +91,9 @@
 .category {
     display: inline-block;
     color: var(--white-color);
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: .4rem .6rem;
+    border-radius: 15px;
+    margin-bottom: .5rem;
 }
