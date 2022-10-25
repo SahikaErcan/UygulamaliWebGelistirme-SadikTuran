@@ -40,9 +40,9 @@
     color: var(--white-color);
 }
 .bg-secondary {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color) !important; 
     color: var(--white-color);
-}
+} 
 .bg-light {
     background-color: var(--light-color);
     color: var(--dark-color);

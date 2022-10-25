@@ -162,3 +162,27 @@ p {
 #main-footer .footer-container a:hover {
     color: var(--primary-color);
 }
+
+/* articles details */
+
+.page-container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    margin: 2.5rem 0;
+    gap: 1.5rem;
+}
+.page-container > *:first-child {
+    grid-row: 1 / span 3;
+}
+#article .meta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #eee;
+}
+.page-container #categories ul li {
+    padding: .5rem 0;
+    border-bottom: 1px dotted #555;
+    width: 90%;
+}
