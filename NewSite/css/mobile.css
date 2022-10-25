@@ -1,3 +1,7 @@
+html {
+    font-size: 9px;
+}
+
 #main-nav .social-icons{
     display: none;
 }
@@ -17,6 +21,11 @@
 }
 
 @media(max-width:600px) {
+
+    html {
+        font-size: 8px;
+    }
+
     #header .header-container,
     #main-articles .articles-container,
     #main-footer .footer-container  {
@@ -28,5 +37,9 @@
     #main-footer .footer-container > * {
         border-bottom: 1px dotted #444;
         padding-bottom: 1rem;
+    }
+
+    .page-container {
+        grid-template-columns: 1fr;
     }
 }
