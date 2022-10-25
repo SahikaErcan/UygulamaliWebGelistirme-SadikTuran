@@ -110,3 +110,12 @@ p {
 #header .header-content {
     z-index: 2;
 }
+
+
+/* ARTICLES */
+
+#main-articles .articles-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
