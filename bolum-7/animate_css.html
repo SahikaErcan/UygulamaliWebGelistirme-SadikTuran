@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Hazır animasyonların eklenme linki -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        body {
+            background-color: #333;
+        }
+        h1 {
+            color: yellow;
+            margin-top: 300px;
+            text-align: center;
+        }
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: darkorange;
+            margin-top: 50px;
+            margin-left: 250px;
+        }
+        .element {
+            background-color: darkgoldenrod;
+            animation: backOutDown;
+            animation-duration: 2s;
+        }
+        .animate__animated.animate__flash {
+            --animate-duration: 2s;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animate__animated animate__bounce">Lorem, ipsum dolor.</h1>
+    <div class="animate__animated animate__flash animate__delay-3s"></div> 
+    <!-- Class olarak bir gecikme veriyoruz -> animate__delay-3s -->
+    <div class="element"></div>
+</body>
+</html>
