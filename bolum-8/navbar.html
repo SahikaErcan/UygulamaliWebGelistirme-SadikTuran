@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav class="navbar bg-primary navbar-dark navbar-expand-sm">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Link 1</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Link 2</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Link 3</a>
+            </li>
+        </ul>
+    </nav>
+
+    <br>
+
+    <!-- navbar-expand-sm : responsive tasarım için kullanılır. md-lg-xl-xxl gibi boyutları var. Bir nevi alt sınırı belirliyoruz. Küçük tarayıcılar için-->
+    <nav class="navbar bg-warning navbar-light navbar-expand-sm">
+        <div class="container">  
+            <a href="#" class="navbar-brand">Logo</a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link 2</a>
+                </li>
+                <li class="nav-item">
+                 <a href="#" class="nav-link">Link 3</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Link 2</a>
+                </li>
+                <li class="nav-item">
+                 <a href="#" class="nav-link">Link 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container">
+        <form class="w-50">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email <input type="email" name="name" id="name" class="form-control"></label>               
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password <input type="password" name="password" id="password" class="form-control form-control-sm"></label>               
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address <textarea name="address" id="address" class="form-control form-control-lg"></textarea></label>
+            </div>
+            <div class="mb-3">
+                <label for="file" class="form-label">File Upload <input type="file" name="file" id="file" class="form-control"></label>
+            </div>
+            <div class="mb-3">
+                <label for="city" class="form-label">City <select name="city" id="city" class="form-select">
+                    <option value="0">Adana</option>
+                    <option value="1">Ankara</option>
+                    <option value="2">Adıyaman</option>
+                </select></label>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
