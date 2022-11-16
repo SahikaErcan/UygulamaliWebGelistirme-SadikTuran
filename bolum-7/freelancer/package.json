@@ -1,15 +1,15 @@
 {
-  "name": "sass-project",
+  "name": "freelancer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --watch scss:public/css"
+    "sass": "sass --watch scss:public/css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^1.55.0"
+    "sass": "^1.56.1"
   }
 }
