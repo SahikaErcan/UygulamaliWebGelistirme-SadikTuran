@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+</head>
+<body>
+    <div class="card-header">
+        <h3 class="card-title h1" id="title">Todo App</h3>
+    </div>
+    <ul id="task-list">
+        <li class="task">Görev 1</li>
+        <li class="task">Görev 2</li>
+        <li class="task">Görev 3</li>
+    </ul>
+    <ul id="task-list2">
+        <li class="task">Görev 1</li>
+        <li class="task">Görev 2</li>
+        <li class="task">Görev 3</li>
+    </ul>
+
+    <script>
+        let sonuc;
+
+        sonuc = document.getElementsByClassName("task"); // sınıfı task olan tüm elemanlara ulaşabiliyoruz.
+        sonuc = document.getElementsByClassName("task")[0]; // sınıfı task olan 1. elemana elemanaulaşabiliyoruz.
+        sonuc = document.getElementsByClassName("task")[1]; 
+
+
+        // tüm elemanlara bir döngü içerisinde ulaşalım..
+        // taskList = document.getElementsByClassName("task"); 
+
+
+
+        // her zaman document üzerinden gitmek zorunda değiliz. Önce bir kapsama ulaşırız. Örneğin burda task-list e ulaştığımız gibi daha sonra task-list ul sinden li elemanlarına ulaşıyoruz.
+        ul = document.getElementById("task-list");
+        taskList = ul.getElementsByTagName("li");
+
+
+        // ya da bunlarla hiç uğraşmadan querySelector ifadesini kullanabiliriz.
+        taskList = document.querySelectorAll("li"); // tüm elemanlar seçilir.
+        taskList = document.querySelectorAll("#task-list li"); // kapsam belirtebiliriz. Örneğin task-list id sinin altındaki li elemanları gibi.
+
+        // for (let i = 0; i < taskList.length; i++) {
+        //     console.log(taskList[i]);
+        // }
+
+        // index numaraları ile uğraşmadan da yapabiliriz. elementlere ulaşalım.
+        for(let task of taskList){
+            // console.log(task);
+            task.style.color="red";
+            task.style.fontSize="20px";
+            task.style.fontWeight="bold";
+            // task.innerText = "Item"
+        }
+
+        // index numaralarına ulaşalım
+        // for(let task in taskList){
+        //     console.log(task);
+        // }
+
+
+        // console.log(sonuc); 
+    </script>
+</body>
+</html>

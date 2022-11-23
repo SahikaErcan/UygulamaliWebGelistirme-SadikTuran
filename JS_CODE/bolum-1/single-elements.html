@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card-header">
+        <h3 class="card-title h1" id="title">Todo App</h3>
+    </div>
+    <ul id="task-list">
+        <li>
+            Görev 1
+        </li>
+        <li>
+            Görev 2
+        </li>
+        <li>
+            Görev 3
+        </li>
+    </ul>
+
+    <script>
+        let sonuc;
+
+        sonuc = document.getElementById("title");
+        sonuc = document.getElementById("title").id;
+        sonuc = document.getElementById("title").className;
+        sonuc = document.getElementById("title").classList;
+
+        document.getElementById("title").style.fontSize = "30px";
+        document.getElementById("title").style.color = "red";
+        document.getElementById("title").style.marginLeft = "150px";
+
+
+        document.getElementById("title").innerText = "TODO APP";
+        document.getElementById("title").innerHTML = "<p>TODO APP</p>";
+
+        sonuc = document.querySelector("#title");  // id si title olan bulduğun ilk elemanı seç diyoruz.
+        sonuc = document.querySelector(".card-header"); // clası card-title olan il eleman
+        sonuc = document.querySelector("div");  // bulduğu ilk div
+        sonuc = document.querySelector("li"); // bulduğu ilk li
+        sonuc = document.querySelector("li:first-child");
+        sonuc = document.querySelector("li:last-child");
+        sonuc = document.querySelector("li:nth-child(1)"); // 1.indexdeki li elemanı
+
+        console.log(sonuc);
+    </script>
+</body>
+</html>
