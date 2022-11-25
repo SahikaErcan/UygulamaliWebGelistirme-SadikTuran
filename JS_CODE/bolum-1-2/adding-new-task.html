@@ -22,15 +22,8 @@
                     <div class="card-body">
                         <form>
                             <div class="input-group">
-                                <!-- name="" -> Sayfa üzerinde server tarafında kullanıyoruz.
-                                     id = "" -> JS de kullanılıyor. -->
                                 <input aria-label="text" type="text" name="txtTaskName" id="txtTaskName" class="form-control">
-                                <button type="submit" class="btn btn-primary" id="btnAddNewTask">Ekle</button>
-                                <!-- type="button" ifadesi ile sayfanın yenilenmesini engelliyerek console da yazdığımız ifadenin sabit kalmasını sağlıyoruz. 
-                                Ancak backend bizden submit butonu bekler. ancak submit butonu yenilemeyi gerçekleştiriyor bunu engellemek için script kısmında fınction da bir event tanımlıyoruz. 
-                                "function(event){
-                                    event.preventDefault();
-                                }"-->
+                                <button type="submit" class="btn btn-primary" id="btnAddNewTask">Ekle</button>                                
                             </div>
                         </form>
                     </div>
@@ -75,26 +68,11 @@
             ul.insertAdjacentHTML("afterbegin",li);
         }
 
-
-
-
-        // document.querySelector("#btnAddNewTask").addEventListener("click",function(event){
-        //     console.log("click event");
-        //     event.preventDefault(); // ilgili elementin normal davranışını kapat. Dolayısıyla sayfanın yenilenmesinin önüne geçiyoruz.
-        // });  // bu metot ile bir event-olay ilişkilendiriyoruz.
-
-        // document.querySelector("#btnClear").addEventListener("click",function(event){
-        //     console.log('click event: clear');
-        //     event.preventDefault();
-        // });
-
-
-        // DAHA DÜZENLİ VE KISA YAZMAK MÜMKÜN
         document.querySelector("#btnAddNewTask").addEventListener("click", newTask);
         function newTask(event) {
-            // console.log(event);  // ekle butonuna tıklayınca PointerEvent key:value objesi karşımıza çıkar. Bunun altında bir sürü properti - özellikler var.
-            // console.log(event.target) // eventi çalıştıran butonun referans bilgilerine ulaşırız. Özetle bir buton döndürür.
-            event.target.classList.add("btn-lg");  // ulaşmış olduğum eventin target ı bana bir buton döndürüyor. Ben bu butonun class listesi üzerine bir tana btn-lg clasını ekliyorum. Butona tıkladığımız an buton büyür.
+            
+            let taskInput = document.querySelector("#txtTaskName");
+            console.log(taskInput.value);
             event.preventDefault();
         }
         
