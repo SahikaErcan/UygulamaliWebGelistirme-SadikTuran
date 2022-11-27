@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    DOM un 5 temel metodu vardır.
+    1. document.getElementById(id); -> id niteliği ile eşleşen ilk kaydı getirir.
+    2. document.getElementsByName(name); -> name niteliği ile eşleşen tüm kayıtları dizi olarak  getirir.
+    3. document.getElementByClassName(classAdı); -> class niteliği ile eşleşen tüm kayıtları dizi olarak getirir.
+    4. document.getElementByTagName(etiketadı); -> etiket(html tag leri) adı ile eşleşen tüm kayıtları dizi olarak getirir.
+    5. document.querySelector(seçici); ->  seçici ile eşleşen ilk kaydı getirir.
+    6. document.querySelectorAll(seçici); -> seçici ile eşleşen tüm kayıtları dizi olarak getir.
+    -->
+
+    <!-- 
+        EVENT metodları
+        1. addEventListener: Bir kullanıcı bir düğmeyi tıkladığında olduğu gibi, belirli bir olay gerçekleştiğinde çağrılacak işlevleri ayarlamanıza olanak tanır.
+        * element.addEventListener(olay, fonksiyon(){}, kabarcıklanma)
+            - Olay: Olayın adını belirten bir tür (load, click, mouseover, keypress gibi)
+            - Fonksiyon: Olay algılandığında çalıştırılacak işlevi belirtir
+            - Kabarcıklanma: Olayı yakalama esnasında isteğe bağlı bir Boolean bir değer alır (true veya false), varsayılan olarak false değerini almaktadır. Burada vereceğiniz değer iç içe geçmiş elementlerde dışa doğru ya da içe doğru kabarcıklanma sağlar. Bu değer hangi olayın ilk olarak yürütüleceğini belirlemektedir.
+     -->
+
+    <h1 id="ilkBaslik">Merhaba</h1>
+    <button>Test</button>
+    <p>DOM Öğreniyoruz.</p>
+    <ul>
+        <li id="benimId">Madde 1</li>
+        <li class="benimClass">Madde 2</li>
+        <li class="benimClass">Madde 3</li>
+    </ul>
+    <a href="http://www.google.com">Go To GOOGLE!</a>
+</body>
+</html>
