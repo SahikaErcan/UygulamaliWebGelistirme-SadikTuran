@@ -9,3 +9,9 @@ ul li.checked {
     top: 0;
     padding: 9px 16px;
 }
+
+#deleteAll {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
