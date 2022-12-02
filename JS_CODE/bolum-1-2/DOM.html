@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red {
+            background: red;
+        }
+        .deneme {
+            opacity: 0.3;
+            font-size: 10px;
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
+
+<!-- EVENTLERİ İNCELE: https://developer.mozilla.org/en-US/docs/Web/Events -->
+
     <!-- 
     DOM un 5 temel metodu vardır.
     1. document.getElementById(id); -> id niteliği ile eşleşen ilk kaydı getirir.
@@ -28,12 +41,84 @@
 
     <h1 id="ilkBaslik">Merhaba</h1>
     <button>Test</button>
-    <p>DOM Öğreniyoruz.</p>
+
+    <div id="div1">
+        <p id="p1">DOM Öğreniyoruz.</p>
+        <p id="p2">JS Öğreniyoruz.</p>
+    </div>
+
     <ul>
         <li id="benimId">Madde 1</li>
         <li class="benimClass">Madde 2</li>
         <li class="benimClass">Madde 3</li>
     </ul>
     <a href="http://www.google.com">Go To GOOGLE!</a>
+
+
+
+    <script>
+        var button = document.querySelector("button"); // butonu seçiyoruz
+        // var isRed = false;
+
+        // button.addEventListener('click', function(){
+        //     if(isRed) {
+        //         document.body.style.background = 'white';
+        //     }
+        //     else {
+        //         document.body.style.background = 'red';
+        //     }      
+        //     isRed =! isRed;
+        // });
+        // bu işlemi TOGGLE adı verilen yapı ile de yapabiliriz.
+        // style içerisinde .red sınıfında bi bacground tanımlıyoruz.
+        
+        button.addEventListener('click', function(){
+            document.body.classList.toggle("red"); // body nin içerisindeki classların listesine bakıyoruz. "red" clası varsa onu oradan cıkartacağız beyaz olacak. Beyaz ise kırmızı olacak.
+        });
+
+
+
+        // farklı event deneyelim
+        var ilkElement = document.querySelector('h1');
+        ilkElement.addEventListener("mouseover", function(){
+            this.style.color = "green";
+        });
+        ilkElement.addEventListener("mouseout", function(){
+            this.style.color = "black";
+        });
+
+        //---------------------------
+
+        var liElement = document.querySelectorAll('li');
+        for(var i of liElement){
+            i.addEventListener("mouseover",function(){
+                this.style.color = "orange";
+            });
+            i.addEventListener("mouseout", function(){
+                this.style.color = "black";
+            });
+
+            i.addEventListener("click", function(){
+                this.classList.toggle("deneme");  // deneme isimli class ı li elementlerine her tıkladığımda ilgili liye ekleyecek ve deneme classındaki özellikleri uygulayacak.
+            });
+        }
+
+
+        // Dinamik olarak element ekleme
+        // var parag = document.createElement('p'); // paragraf oluşturacağımız için p tag ini veriyoruz.
+        // var node = document.createTextNode('Bu yeni paragraftır.');
+        // parag.appendChild(node);
+        // var element = document.getElementById('div1');
+        // element.appendChild(parag);
+
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("p1");
+
+        var parag = document.createElement("p");
+        var node = document.createTextNode("Bu yeni paragraftır.");
+
+        parag.appendChild(node);
+        parag.replaceChild(parag, child); // parag ile child ın yerlerini değiştiriyoruz.
+    </script>
 </body>
 </html>
