@@ -52,12 +52,13 @@ Quiz.prototype.soruGetir = function() {
 
 const quiz = new Quiz(sorular);
 
-document.querySelector(".btn-start").addEventListener("click", function() {
+document.querySelector(".btn_start").addEventListener("click", function() {
     if(quiz.sorular.length != quiz.soruIndex) {
+        document.querySelector(".quiz_box").classList.add("active");
         console.log(quiz.soruGetir());
         quiz.soruIndex += 1;
     }
     else {
         console.log("Quiz Bitti.");
     }
-})
+});
