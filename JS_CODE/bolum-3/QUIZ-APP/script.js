@@ -35,10 +35,10 @@ function Soru(soruMetni, cevapSecenekleri, dogruCevap) {
 
 
 let sorular = [
-    new Soru("Hangisi JS paket yönetim uygulamasıdır?", {a:"Node.js", b:"Typescript", c:"Npm"}, "c"),
-    new Soru("Hangisi .net paket yönetim uygulamasıdır?", {a:"Node.js", b:"nuget", c:"Npm"}, "b"),
-    new Soru("Hangisi JS paket yönetim uygulamasıdır?", {a:"Node.js", b:"Typescript", c:"Npm"}, "c"),
-    new Soru("Hangisi .net paket yönetim uygulamasıdır?", {a:"Node.js", b:"nuget", c:"Npm"}, "b")
+    new Soru("Hangisi JS paket yönetim uygulamasıdır?", {a:"Node.js", b:"Typescript", c:"Npm", d:"Nuget"}, "c"),
+    new Soru("Hangisi .net paket yönetim uygulamasıdır?", {a:"Node.js", b:"nuget", c:"Npm", d:"Typescript"}, "b"),
+    new Soru("Hangisi JS paket yönetim uygulamasıdır?", {a:"Node.js", b:"Typescript", c:"Npm", d:"Nuget"}, "c"),
+    new Soru("Hangisi .net paket yönetim uygulamasıdır?", {a:"Node.js", b:"nuget", c:"Npm", d:"Typescript"}, "b")
 ]
 
 function Quiz(sorular) {
@@ -53,12 +53,33 @@ Quiz.prototype.soruGetir = function() {
 const quiz = new Quiz(sorular);
 
 document.querySelector(".btn_start").addEventListener("click", function() {
-    if(quiz.sorular.length != quiz.soruIndex) {
-        document.querySelector(".quiz_box").classList.add("active");
-        console.log(quiz.soruGetir());
+    document.querySelector(".quiz_box").classList.add("active");
+    soruGoster(quiz.soruGetir());
+});
+
+document.querySelector(".next_btn").addEventListener("click", function() {
+    if(quiz.sorular.length != quiz.soruIndex + 1) {
         quiz.soruIndex += 1;
+        soruGoster(quiz.soruGetir());
     }
     else {
         console.log("Quiz Bitti.");
     }
 });
+
+function soruGoster(soru) {
+    let question = `<span>${soru.soruMetni}</span>`;
+    let options = '';
+
+    for (let cevap in soru.cevapSecenekleri) {
+        options +=
+            `
+                <div class="option">
+                    <span><b>${cevap}</b>. ${soru.cevapSecenekleri[cevap]}</span>
+                </div>
+            `;
+    }
+
+    document.querySelector(".question_text").innerHTML = question;
+    document.querySelector(".option_list").innerHTML = options;
+}
