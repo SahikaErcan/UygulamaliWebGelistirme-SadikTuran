@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const msj = ["benim","adım","Şahika"];
+
+        let sonuc="";
+        for(let x of msj) {
+            sonuc += x + " ";
+        }
+        console.log(sonuc);
+     // yukarıdaki adımları spread operatörü(...) ile tek satırda yapalım.
+        console.log(...msj);
+
+
+
+        const dizi1 = ["bir","iki"];
+        const dizi2 = ["üç","dört"];
+        const dizi3 = [...dizi1, ...dizi2, "beş", "altı"];
+        console.log(dizi3);
+
+
+        const sayilar1 = [1,2,3];
+        // const sayilar2 = sayilar1; // referans copy - aynı adres 
+        const sayilar2 = [...sayilar1]; // value copy 
+        sayilar1[0]=10;
+        console.log(sayilar1, sayilar2);
+
+
+
+        const user = {
+            username: "sadikturan",
+            email:"info@gmail.com"
+        }
+        const address = {
+            username: "abc",  // üsteki username i çiğner çıktı da abc görünür.
+            city:"Kocaeli"
+        }
+        console.log({...user, ...address});
+
+
+
+        // rest parameters - istediğimiz kadar parametre 
+        function toplam(...args) {
+            let sonuc = 0;
+
+            for(let sayi of args) {
+                sonuc += sayi;
+            }
+            return sonuc;
+        }
+        console.log(toplam(1,2,3));
+        console.log(toplam(1,2,3,4,5));
+        console.log(toplam(1,2,3,4,5,6,7));
+
+
+        function bilgileriGoster(ad, soyad, ...adres){
+            console.log(ad,soyad,adres);
+        }
+        bilgileriGoster("Ali","Çevik","Adıyaman","Besni");
+
+    </script>
+
+</body>
+</html>
