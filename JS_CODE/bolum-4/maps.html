@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const ogrenciler = new Map();
+        ogrenciler.set(1, "ali yılmaz"); // key: value
+        ogrenciler.set("56757483923", "efe can");
+        ogrenciler.set(true, "ali can");
+        // console.log(ogrenciler);
+        console.log(ogrenciler.get(1));
+        console.log(ogrenciler.get("56757483923"));
+        console.log(ogrenciler.get(true));
+
+
+        let sonuc;
+        sonuc = ogrenciler.size;
+        sonuc = ogrenciler.has(1); // herhangi bir değerin (KEY) liste üzerinde olup olmadığını kontrol ediyoruz. çıktı: boolean
+        // ogrenciler.delete(1);
+        sonuc = ogrenciler.size;      
+        console.log(sonuc);
+
+        // ogrenciler.clear();
+        // console.log(ogrenciler);
+
+        // for(let x of ogrenciler.keys()) {
+        //     console.log(x);
+        // }
+        // for(let x of ogrenciler.values()) {
+        //     console.log(x);
+        // }
+
+        // for(let x of ogrenciler.entries()) {
+        //     // console.log(x);
+        //     // console.log(x[0]); //key
+        //     // console.log(x[1]); //value
+        // }
+        for(let [key,value] of ogrenciler.entries()) {
+            console.log(key,value);
+        }
+
+    </script>
+</body>
+</html>
