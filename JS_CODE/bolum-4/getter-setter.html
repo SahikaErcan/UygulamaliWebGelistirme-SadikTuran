@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Kisi {
+            constructor(ad, meslek, dogumYili) {
+                this.ad = ad;
+                this.meslek = meslek;
+                this.dogumYili = dogumYili;
+            }
+
+            yasHesapla() {
+                let tarih = new Date().getFullYear();
+                return tarih - this.dogumYili;
+            }
+
+            get ad() { // değer alma
+                return this._ad;
+            }
+            set ad(value) {  // özelliğe değer atama
+                if(value.length < 3) {
+                    console.log("Ad için çok az karakter.");
+                    return;
+                }
+                this._ad = value;
+            }
+
+
+            get dogumYili() {
+                return this._dogumYili;
+            }
+            set dogumYili(value) {
+                if(value < 1900 || value > new Date().getFullYear()) {
+                    console.log("Tarih bilgisi yanlış.");
+                    return;
+                }
+                this._dogumYili = value;
+            }
+        }
+
+        let kisi1 = new Kisi("çı","öğrenci",2012);
+        let kisi2 = new Kisi("çınar","öğrenci",2025);
+
+        console.log(kisi1);
+        console.log(kisi1.ad);
+        console.log(kisi2);
+        console.log(kisi2.ad);
+    </script>
+</body>
+</html>
