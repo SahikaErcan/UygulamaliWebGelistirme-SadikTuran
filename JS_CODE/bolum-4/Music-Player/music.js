@@ -6,6 +6,7 @@ class Music {
         this.file = file;
     }
 
+    // Her bir müzik bilgisi için
     getName() {
         return this.title + " - " + this.singer;
     }
