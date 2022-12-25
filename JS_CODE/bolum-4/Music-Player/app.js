@@ -13,6 +13,7 @@ const currentTime = document.querySelector("#current-time");
 const progressBar = document.querySelector("#progress-bar");
 const volume = document.querySelector("#volume");
 const volumeBar = document.querySelector("#volume-bar");
+const ul = document.querySelector("ul");
 
 
 const player = new MusicPlayer(musicList);
@@ -20,6 +21,8 @@ const player = new MusicPlayer(musicList);
 window.addEventListener('load', () => {
     let music = player.getMusic(); // İlk başta 1. müziği getirir.
     displayMusic(music);
+    displayMusicList(player.musicList);
+    isPlayingNow();
 });
 
 const  displayMusic = (music) => {
@@ -27,6 +30,53 @@ const  displayMusic = (music) => {
     image.src = 'img/' + music.img;
     audio.src = 'mp3/' + music.file;
 }
+
+const displayMusicList = (list) => {
+    for(let i=0; i < list.length; i++) {
+        // liste elemanlardan birine tıkladığımızda o elemana ulaşmak için onclick="selectedMusic(this)" kullanıyoruz. Yani herhangi bir liste elemanına tıkladığımızda selectedMusic(this) aktifleşsin.
+        // hangi müziği seçtiğimizi ayırt etmek için li-index="${i}" kullanıyoruz.
+        let liTag = `
+            <li li-index='${i}' onclick="selectedMusic(this)" class="list-group-item d-flex justify-content-between align-items-center">
+                <span>${list[i].getName()}</span>
+                <span id="music-${i}" class="badge bg-primary rounded-pill"></span>
+                <audio class="music-${i}" src="mp3/${list[i].file}"></audio>
+            </li>
+        `;
+         
+        ul.insertAdjacentHTML("beforeend", liTag);
+
+        let liAudioDuration = ul.querySelector(`#music-${i}`); // yukardaki 2.span için
+        let liAudioTag = ul.querySelector(`.music-${i}`); // yukardaki audio için
+
+        liAudioTag.addEventListener("loadeddata", () => {
+            liAudioDuration.innerText = calculateTime(liAudioTag.duration); // liAudioTag.duration her bir elemanın süre bilgisini verir. // yukardaki 2.span için
+        });
+    }
+}
+
+const selectedMusic = (li) => {
+    player.index = li.getAttribute('li-index');  // tıkladığımız müziğin index numarasını alıyoruz.
+    displayMusic(player.getMusic()); // müzik bilgisini alıp sayfada yazdırıyoruz.
+    playMusic(); // index numarasında ne varsa o müzik çlacak
+    isPlayingNow();
+}
+
+const isPlayingNow = () => { // çalan müzik ile ilgileniyoruz.
+    for(let li of ul.querySelectorAll("li")) { // bütün liste elemanlarını dolaşıyoruz
+        if(li.classList.contains('playing')) {  // ilgili elemanda playing classı varsa
+            li.classList.remove('playing');     // sil.
+        }
+
+        if(li.getAttribute("li-index") == player.index) {  // ulaştığım li nin index i playerdaki indexle eşitse müzik çalıyor demektir. Müzik çalıyorsa playing sınıfını
+            li.classList.add('playing');  // ekle
+        }
+    }
+}
+
+// müzik bittiğinde başa sarsın
+audio.addEventListener("ended", () => {
+    nextMusic();
+})
 
 play.addEventListener('click', () => {
     const isMusicPlay = container.classList.contains('playing');  // container divinde playing sınıfının olup olmadığını sorguluyoruz. (Boolean)
@@ -46,6 +96,7 @@ const prevMusic = () => {
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
+    isPlayingNow();
 }
 
 const nextMusic = () => {
@@ -53,6 +104,7 @@ const nextMusic = () => {
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
+    isPlayingNow();
 }
 
 const pauseMusic = () => { // Buna tıkladıysak playing classı vardır.
