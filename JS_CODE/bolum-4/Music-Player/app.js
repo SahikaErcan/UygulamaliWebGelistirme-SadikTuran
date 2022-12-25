@@ -11,6 +11,8 @@ const next = document.querySelector("#controls #next");
 const duration = document.querySelector("#duration");
 const currentTime = document.querySelector("#current-time");
 const progressBar = document.querySelector("#progress-bar");
+const volume = document.querySelector("#volume");
+const volumeBar = document.querySelector("#volume-bar");
 
 
 const player = new MusicPlayer(musicList);
@@ -20,7 +22,7 @@ window.addEventListener('load', () => {
     displayMusic(music);
 });
 
-function displayMusic(music) {
+const  displayMusic = (music) => {
     title.innerText = music.getName();
     image.src = 'img/' + music.img;
     audio.src = 'mp3/' + music.file;
@@ -39,29 +41,29 @@ next.addEventListener('click', () => {
     nextMusic();
 });
 
-function prevMusic() {
+const prevMusic = () => {
     player.prev();
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
 }
 
-function nextMusic() {
+const nextMusic = () => {
     player.next();
     let music = player.getMusic();
     displayMusic(music);
     playMusic();
 }
 
-function pauseMusic() { // Buna tıkladıysak playing classı vardır.
+const pauseMusic = () => { // Buna tıkladıysak playing classı vardır.
     container.classList.remove('playing');  // Dolayısıyla bunu burdan silelim.
-    play.classList = "fa-solid fa-play";
+    play.querySelector("i").classList = "fa-solid fa-play";
     audio.pause();
 }
 
-function playMusic() {// Buna tıkladıysak playing classı yoktur.
+const playMusic = () => {// Buna tıkladıysak playing classı yoktur.
     container.classList.add('playing');  // Dolayısıyla bunu burdan ekleyelim.
-    play.classList = "fa-solid fa-pause";
+    play.querySelector("i").classList = "fa-solid fa-pause";
     audio.play();
 }
 
@@ -83,3 +85,37 @@ audio.addEventListener("timeupdate", () => { // geçen süreyi progres bar üzer
     progressBar.value = Math.floor(audio.currentTime); // currentTime: o an da müzik hangi saniyede ise bize onu verir.
     currentTime.textContent = calculateTime(progressBar.value); // sayfada ilgili alanda gösteriyoruz.
 });
+
+// Bir form elemanının üzerine tıklandığında, içine girildiğinde gibi olaylardan sonra yapmasını istediğimiz şeyleri belirtmek için input olaylarını kullanırız.
+progressBar.addEventListener("input", () => {  // müziği ilerletme
+    currentTime.textContent = calculateTime(progressBar.value);
+    audio.currentTime = progressBar.value; // müziğin süre bilgisini set ediyoruz. Direk saniye cinsinden değer istiyor bu nedenle direk aktarıyoruz..
+}) 
+
+let soundStatus = "audible"; // sesli
+
+volumeBar.addEventListener("input", (e) => {
+    const value = e.target.value;
+    audio.volume = value / 100;  // audio nun volume bilgisinin alabileceği değerler 0 ile 1 arasındadır bundan dolayı gelen değeri 100 ile bölüyoruz. Çünkü bize 0 ile 100 arasında değerler geliyor.
+    if(value == 0) {
+        volume.classList = "fa-solid fa-volume-xmark";
+    }
+    else {
+        volume.classList = "fa-solid fa-volume-high";
+    }
+})
+
+volume.addEventListener("click", () => {
+    if(soundStatus === "audible"){
+        audio.muted = true;  // sesi kıs
+        soundStatus = "muted"; // sessiz
+        volume.classList = "fa-solid fa-volume-xmark";
+        volumeBar.value = 0
+    }
+    else {
+        audio.muted = false;  // sesi aç
+        soundStatus = "audible";
+        volume.classList = "fa-solid fa-volume-high";
+        volumeBar.value = 100;
+    }
+})
