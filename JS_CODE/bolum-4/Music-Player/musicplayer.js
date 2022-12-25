@@ -10,6 +10,7 @@ class MusicPlayer{
     getMusic(){
         return this.musicList[this.index]; // O anki index numarası neyse o indexdeki müziği getirir.
     }
+
     next() {
         if(this.index + 1 != this.musicList.length){
             this.index++;
@@ -18,7 +19,8 @@ class MusicPlayer{
             this.index = 0; // listedeki müzik bittiğinde bir dahaki next de listenin başına dönmesini sağlıyoruz.
         }
     }
-    previous() {
+    
+    prev() {
         if(this.index != 0){
             this.index--;
         }
