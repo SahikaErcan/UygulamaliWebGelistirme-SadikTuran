@@ -89,7 +89,7 @@ img {
     position: relative; /*main-header::before işlemi için ekledik.*/
 }
 .main-header.blog { /*main-header sınıfını seçiyorum ancak main-header sınıfı aynı zamanda blog sınfıı da olacak diyoruz. Sınıfları bu şekilde ifade ederken aralarına boşluk bırakılmaz.*/ 
-    background-image: url(../img/bg-2.jpeg);
+    background-image: url("../img/bg-2.jpeg");
     height: 50vh;
 }
 .main-header .content {
@@ -237,8 +237,9 @@ img {
     }
     .navbar {
         flex-direction: column;
-        height: 120px;
+        height: 110px;
         padding: 20px;
+        position: static;
     }
     .navbar a {
         padding: 10px;
