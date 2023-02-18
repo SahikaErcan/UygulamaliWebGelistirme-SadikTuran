@@ -1,0 +1,11 @@
+/**
+    // Varsayılan değişken geçersiz kılmaları
+    $body-bg: #fff;
+    $body-color: #111;
+
+    // $theme-colors haritasındaki tüm değişkenler, bağımsız değişkenler olarak tanımlanır. $theme-colors haritamızdaki mevcut bir rengi değiştirmek için, özel Sass dosyanıza aşağıdakini ekleyin: (../node_modules/bootstrap/scss/_variables.scss)
+    $primary: #0074d9;
+    $danger: #ff4136;
+**/
+
+$primary: #6610f2;
