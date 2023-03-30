@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log('start');
+        const login = (username, password, callback) => {
+            setTimeout(() => {
+                callback( { username: username, email: "sadikturan@gmail.com"} )
+            }, 1000);
+        }
+
+        const getPostByUsername = (username,callback) => {
+            setTimeout(() => {
+                callback(["post1","post2","post3"]);
+            }, 2000);
+        }
+
+        const getPostDetails = (post, callback) => {
+            setTimeout(() => {
+                callback("post details");
+            }, 1000);
+        }
+
+        login('sadıkturan','123456', user => {
+            console.log(user.username);
+            console.log(user.email);
+
+            getPostByUsername(user.username, (posts) => {
+                console.log(posts);
+                
+                getPostDetails(posts[0], (details) => {
+                    console.log(details);
+                })
+            });
+        });
+
+
+        const meyveler = ["Elma","Armut","Üzüm","Kivi","Muz"];
+        const meyve = meyveler.filter((meyve) => {
+            return meyve.length===4
+        });
+        console.log(meyve);
+
+
+        const yaz = (isim, soyisim, callback) => {
+            console.log(isim+" "+soyisim);
+            const veri = {
+                adress: "Ankara",
+                tarih: new Date()
+            }
+            callback(veri)
+        }
+        yaz("Mehmet","Elbeyli",(veri)=>{console.log(veri)})
+
+        
+        console.log('end');
+    </script>
+
+</body>
+</html>

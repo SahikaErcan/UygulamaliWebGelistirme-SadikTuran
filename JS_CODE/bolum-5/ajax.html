@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container my-3">
+        <div class="row"></div>
+    </div>
+
+
+    <script>
+
+        function displayCountry(country) {
+            const request = new XMLHttpRequest(); // Bu obje aracılığı ile talep gönderiyoruz.
+            request.open('GET', "https://restcountries.com/v3.1/name/" + country); 
+            // open() ile serverdan bir metot tanımlaması bir de hangi adrese sorgu göndereceğiz onu belirtiyoruz. GET - bilgi al
+            request.send() // talebi servise gönderiyoruz.
+
+            // Gönderilen taleb asenkron bir işlemdir. Bu nedenle işlemin ne zaman bittiğini kavramak için callback kullanacağız. Bunu event ekleyerek gerçekleştirebiliriz. 
+            // load eventi - gönderilen talep başarılı bir şekilde bitti mi?
+            // Bittikten sonra çalışacak olan kod bloğunu bir callback aracılığı ile ekliyoruz.
+            request.addEventListener('load', function() {
+                // servisden cevap gelip bilgiyi aldığımız an da request bilgisini ekranda gösterelim.
+            /*  
+                const data = this.responseText;
+                console.log(data);
+                console.log(typeof data); // gelen datanın string tipinde olduğunu söylüyor.
+                // String tipinde olduğu için burdaki datanın herhangi bir detayına ulaşamıyoruz. Biz string bilgiyi json a çevirmeliyiz ki data üzerinde çalışabilelim.
+            */
+                // data obje yapısına çevirilecek formatta yani dizi şeklinde içerisinde key:value saklanmış bu nedenle bunu direk JSON.parse() ile çevirebiliriz.
+                const data = JSON.parse(this.responseText);
+                console.log(typeof data);
+                setCountry(data[0]) // ihtiyacımız olan, datanın 0. indexindeki bilgiler. Bu yüzden fonksiyona data bilgilerini gönderiyoruz.
+            });
+
+        }
+        
+        function setCountry(data) {
+            const html = `
+                <div class="col-3">
+                    <div class="card h-100">    
+                        <img src="${data.flags.png}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${data.name.common}</h5>
+                        </div> 
+                        <ul class="list-group list-group-flush"> 
+                            <li class="list-group-item">Population: ${(data.population / 1000000).toFixed(1)}</li>
+                            <li class="list-group-item">Capital: ${data.capital[0]}</li>
+                            <li class="list-group-item">Language: ${Object.values(data.languages)}</li>
+                        </ul>  
+                    </div>
+                </div>
+            `;
+
+            document.querySelector(".container .row").insertAdjacentHTML("beforeend", html)
+        }
+
+
+        displayCountry("turkey");
+        displayCountry("azerbaijan");
+        displayCountry("italy");
+        displayCountry("russia");
+
+
+    </script>
+
+</body>
+</html>
