@@ -13,6 +13,38 @@
         <div class="row"></div>
     </div>
 
+    <!-- AJAX teknolojisi web sayfalarını yenilemeden arka planda veri gönderme ve veri alma işlemleri için kullanılır. 
+    * AJAX istekleri XMLHttpRequest nesnesi ile yapılır.
+    * XMLHttpRequest nesnesi çeşitli metot, olay ve özelliğe sahiptir.
+    * XMLHttpRequest nesnesine ait open metodu AJAX isteği açmak için kullanılır.
+    * AJAX isteği sırasında XMLHttpRequest nesnesine ait olaylar(onloadstart, onloadend, onerror, …) tetiklenir.
+    * AJAX işlemleri durum her değiştiğinde tetiklenen onreadystatechange olayı içinde yapılır.
+    * AJAX işlem durumu readyState özelliği ile kontrol edilir. İstek başlatılmadığında readyState özelliği 0, açıldığında 1, istek gönderildiğinde 2, yüklendiğinde 3 ve tamamlandığında 4 değerini alır. İşlemleri readyState değeri 4 ve HTTP durum kodunun 200 olması ile gerçekleştirmek olası hataları önleyecektir. 
+    * İstek sonucunda dönen değerler response, responseText ve responseXML ile alınır.
+    * AJAX isteği başlatılmadığından herhangi bir dönüş olmayacaktır. AJAX isteği send metodu ile başlatılır.
+    * Metot ayrıca setRequestHeader metodu ile birlikte POST metoduna göre veri göndermek içinde kullanılır.
+    * AJAX işlemleri benzerlik gösterdiğinden kod tekrarını azaltmak için AJAX işlemlerini fonksiyon haline getirmek tekrar kullanım için faydalı olacaktır.
+            <script>
+                'use strict';
+                function ysAjax(url, method, data, callback) {
+                    var xhr = new XMLHttpRequest();
+
+                    xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (typeof callback == 'function') {
+                        callback(this);
+                        }
+                    }
+                    }
+
+                    xhr.open(method, url);
+                    if (method == 'POST' && !(data instanceof FormData)) {
+                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    }
+                    xhr.send(data);
+                }
+            </script>
+    -->
 
     <script>
 
